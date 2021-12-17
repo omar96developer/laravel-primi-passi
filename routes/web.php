@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
+
+Route::get('/', function () {
+    $dati = [
+        'titolo' => 'Benvenuto',
+        'intro' => 'Questa è la Home Page di questo sito',
+        'altro' => [
+            'Servizi',
+            'Opinioni',
+            'Contatti'
+        ]
+
+        ];
+    return view('home', $dati);
+})->name('homePage');
