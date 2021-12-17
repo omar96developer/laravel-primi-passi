@@ -22,5 +22,17 @@
     <main>
         <h1>Benvenuto in Servizi</h1>
     </main>
+    <footer>
+        @if(count($links) > 0)
+        <h3>Potrebbe interessarti: </h3>
+        <ul>
+            @foreach($links as $link)
+            <li>
+                <a href="{{ route($link) }}">{{$link}}</a>
+            </li>       
+            @endforeach
+        </ul>
+        @endif
+    </footer>
 </body>
 </html>
