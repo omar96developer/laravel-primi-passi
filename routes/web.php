@@ -18,15 +18,55 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::get('/', function () {
-    $dati = [
+    $data = [
         'titolo' => 'Benvenuto',
         'intro' => 'Questa è la Home Page di questo sito',
-        'altro' => [
+        'links' => [
+            'Home',
             'Servizi',
             'Opinioni',
             'Contatti'
         ]
 
         ];
-    return view('home', $dati);
-})->name('homePage');
+    return view('home', $data);
+})->name('Home');
+
+Route::get('/Servizi', function () {
+    $data = [     
+        'links' => [
+            'Home',
+            'Servizi',
+            'Opinioni',
+            'Contatti'
+        ]
+
+        ];
+    return view('servizi', $data);
+})->name('Servizi');
+
+Route::get('/Opinioni', function () {
+    $data = [      
+        'links' => [
+            'Home',
+            'Servizi',
+            'Opinioni',
+            'Contatti'
+        ]
+
+        ];
+    return view('opinioni', $data);
+})->name('Opinioni');
+
+Route::get('/Contatti', function () {
+    $data = [  
+        'links' => [
+            'Home',
+            'Servizi',
+            'Opinioni',
+            'Contatti'
+        ]
+
+        ];
+    return view('contatti', $data);
+})->name('Contatti');
